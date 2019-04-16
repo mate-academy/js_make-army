@@ -21,7 +21,17 @@
  * @return {function[]}
  */
 function makeArmy(count) {
-  // write code here
+  let result = [];
+  let counter = 0;
+  while (count > 0) {
+    const solder = counter;
+    result.push(function() {
+      return solder;
+    });
+    counter++;
+    count--;
+  }
+  return result;
 }
 
 module.exports = makeArmy;
