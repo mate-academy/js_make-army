@@ -24,11 +24,9 @@
 function makeArmy(count) {
   let arrayOfShooters = [];
   while (count >= 0) {
-    let soldier = function() {
-      return soldier.index;
-    };
+    let soldier = () => soldier.index;
     soldier.index = count;
-    arrayOfShooters[count] = soldier;
+    arrayOfShooters.unshift(soldier);
     count--;
   }
   return arrayOfShooters;
