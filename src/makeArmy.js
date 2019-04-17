@@ -20,18 +20,21 @@
  *
  * @return {function[]}
  */
+function makeSoldier(serialNo) {
+  return function() {
+    return serialNo;
+  };
+}
+
 function makeArmy(count) {
-  let result = [];
-  let counter = 0;
-  while (count > 0) {
-    const solder = counter;
-    result.push(function() {
-      return solder;
-    });
-    counter++;
-    count--;
+  let army = [];
+  let correntNo = 0;
+  while (correntNo < count) {
+    let soldier = makeSoldier(correntNo);
+    army[correntNo] = soldier;
+    correntNo++;
   }
-  return result;
+  return army;
 }
 
 module.exports = makeArmy;
