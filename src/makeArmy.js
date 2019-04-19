@@ -20,18 +20,13 @@
  *
  * @return {function[]}
  */
-function makeSoldier(serialNo) {
-  return function() {
-    return serialNo;
-  };
-}
 
 function makeArmy(count) {
   let army = [];
   let correntNo = 0;
   while (correntNo < count) {
-    let soldier = makeSoldier(correntNo);
-    army[correntNo] = soldier;
+    let soldierId = correntNo;
+    army.push(() => soldierId);
     correntNo++;
   }
   return army;
