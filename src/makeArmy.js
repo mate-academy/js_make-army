@@ -36,11 +36,4 @@ function makeArmy(count) {
   }
   return army;
 };
-
-let army = makeArmy(3);
-
-army[0]();
-army[1]();
-army[2]();
-
 module.exports = makeArmy;
