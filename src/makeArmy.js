@@ -24,7 +24,7 @@ function makeArmy(count) {
   const army = [];
 
   while (army.length < count) {
-    let shooters = army.length;
+    const shooters = army.length;
     army.push(function() {
       return shooters;
     });
