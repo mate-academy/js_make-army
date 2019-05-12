@@ -22,11 +22,10 @@
  */
 function makeArmy(count) {
   const shooters = [];
-  let i = 0;
-  while (i < count) {
-    const num = i;
+
+  while (shooters.length < count) {
+    const num = shooters.length;
     shooters[shooters.length] = () => num;
-    i++;
   }
 
   return shooters;
