@@ -22,6 +22,26 @@
  */
 function makeArmy(count) {
   // write code here
+  let shooters = [];
+  let currentShooter = 0;
+
+  const buffer = (personNum) => {
+    return () => {console.log(personNum)};
+  };
+
+  while (currentShooter < count) {
+
+    let shooter = buffer(currentShooter);
+    shooters.push(shooter);
+    currentShooter++;
+  }
+  return shooters;
 }
+
+const shooters = makeArmy(10)
+
+shooters[0]() === 0;
+shooters[5]() === 5;
+shooters[9]() === 9;
 
 module.exports = makeArmy;
