@@ -20,8 +20,30 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
-  // write code here
+
+'use strict';
+
+
+function makeArmy(num) {
+	
+	let shooters = [];
+  	let Shooter = 0;
+
+	const buffer = (personNum) => {
+
+ return () => {console.log(personNum)};
+};
+    while (Shooter <= num) {
+    let shooter = buffer(Shooter);
+    shooters.push(shooter);
+    Shooter++;
+  }
+  return shooters;
 }
 
+const shooters = makeArmy(10)
+ 
+shooters[0]() === 0;
+shooters[5]() === 5;
+shooters[9]() === 9;
 module.exports = makeArmy;
