@@ -24,26 +24,25 @@
 'use strict';
 
 function makeArmy(num) {
-	
-	let shooters = [];
-  	let Shooter = 0;
 
-	const buffer = (personNum) => {
+  let shooters = [];
+  let currentShooter = 0;
 
- 		return () => {console.log(personNum)};
-	};
+  const buffer = (personNum) => {
+    return () => {console.log(personNum)};
+  };
 
-    while (Shooter <= num) {
+  while (currentShooter <= num) {
 
-   		let shooter = buffer(Shooter);
-    	shooters.push(shooter);
-    	Shooter++;
- 	}
- 	return shooters;
+    let shooter = buffer(currentShooter);
+    shooters.push(shooter);
+    currentShooter++;
+  }
+  return shooters;
 }
 
 const shooters = makeArmy(10)
- 
+
 shooters[0]() === 0;
 shooters[5]() === 5;
 shooters[9]() === 9;
