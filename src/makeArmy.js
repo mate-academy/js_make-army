@@ -32,7 +32,7 @@ function makeArmy(num) {
     return () => {console.log(personNum)};
   };
 
-  while (currentShooter <= num) {
+  while (currentShooter < num) {
 
     let shooter = buffer(currentShooter);
     shooters.push(shooter);
