@@ -47,4 +47,5 @@ const shooters = makeArmy(10)
 shooters[0]() === 0;
 shooters[5]() === 5;
 shooters[9]() === 9;
+
 module.exports = makeArmy;
