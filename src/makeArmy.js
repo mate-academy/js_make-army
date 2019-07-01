@@ -20,8 +20,19 @@
  *
  * @return {function[]}
  */
+
 function makeArmy(count) {
-  // write code here
+  const armyArray = [];
+  function aPusher() {
+    while (armyArray.length < count) {
+      let shooter = armyArray.length;
+      armyArray.push(function() {
+        return shooter;
+      });
+    };
+    return armyArray;
+  };
+  return aPusher();
 }
 
 module.exports = makeArmy;
