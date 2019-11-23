@@ -18,10 +18,20 @@
  *
  * @param {number} count
  *
- * @return {function[]}
+ * @return {void}
  */
 function makeArmy(count) {
-  // write code here
+  let shoot = 0;
+  const shooters = [];
+
+  while (shoot <= count) {
+    const index = shoot;
+    shooters.push(function() {
+      return index;
+    });
+    shoot++;
+  }
+  return shooters;
 }
 
 module.exports = makeArmy;
