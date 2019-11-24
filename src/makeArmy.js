@@ -25,8 +25,8 @@ function makeArmy(count) {
   let counter = count;
   const soldiers = [];
   while (counter !== -1) {
-    const x = (function() { return counter; })();
-    soldiers.unshift(function() { return x; });
+    const positionOfSolder = (function() { return counter; })();
+    soldiers.unshift(function() { return positionOfSolder; });
     counter--;
   }
   return soldiers;
