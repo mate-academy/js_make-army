@@ -20,8 +20,16 @@
  *
  * @return {function[]}
  */
+/* stylelint-disable */
 function makeArmy(count) {
-  // write code here
+  let counter = count;
+  const soldiers = [];
+  while (counter !== -1) {
+    const x = (function() { return counter; })();
+    soldiers.unshift(function() { return x; });
+    counter--;
+  }
+  return soldiers;
 }
 
 module.exports = makeArmy;
