@@ -20,8 +20,24 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
-  // write code here
-}
+
+function makeArmy(n) {
+  const army = [];
+  let counter = 0;
+
+  const subFactory = function(serialNo) {
+    return function() {
+      return serialNo;
+    };
+  };
+
+  while (counter < n) {
+    const solderName = subFactory(counter);
+    army[counter] = solderName;
+    counter++;
+  }
+
+  return army;
+};
 
 module.exports = makeArmy;
