@@ -20,8 +20,24 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
-  // write code here
+
+function makeArmy(n) {
+  const army = [];
+  let count = 0;
+
+  const makeSoldier = function(index) {
+    return function() {
+      return index;
+    };
+  };
+
+  while (count < n) {
+    const soldier = makeSoldier(count);
+    army[count] = soldier;
+    count++;
+  }
+
+  return army;
 }
 
 module.exports = makeArmy;
