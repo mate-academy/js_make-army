@@ -25,8 +25,9 @@ function makeArmy(count) {
   const shooters = [];
 
   while (counter < count) {
+    const localCounter = counter;
     shooters[shooters.length] = function shooter() {
-      return shooters.indexOf(shooter);
+      return localCounter;
     };
 
     counter++;
