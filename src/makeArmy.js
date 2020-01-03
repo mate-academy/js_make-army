@@ -21,7 +21,21 @@
  * @return {function[]}
  */
 function makeArmy(count) {
-  // write code here
+  const army = [];
+  let counter = 0;
+
+  const subFactory = function(serialNo) {
+    return function() {
+      return serialNo;
+    };
+  };
+
+  while (counter < count) {
+    army[counter] = subFactory(counter);
+    counter++;
+  }
+
+  return army;
 }
 
 module.exports = makeArmy;
