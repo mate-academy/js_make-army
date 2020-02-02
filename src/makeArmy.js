@@ -21,7 +21,20 @@
  * @return {function[]}
  */
 function makeArmy(count) {
-  // write code here
+  const army = [];
+  let index = 0;
+
+  while (index <= count) {
+    const j = index;
+    const shooter = function() {
+      return j;
+    };
+
+    army.push(shooter);
+    index++;
+  }
+
+  return army;
 }
 
 module.exports = makeArmy;
