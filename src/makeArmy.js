@@ -22,10 +22,17 @@
  */
 function makeArmy(count) {
   const army = [];
+  let i = 0;
 
-  for (let i = 0; i < count; i++) {
-    army.push(() => (i));
-  };
+  while (i < count) {
+    const j = i;
+    const shooter = function() {
+      return (j);
+    };
+
+    army.push(shooter);
+    i++;
+  }
 
   return army;
 }
