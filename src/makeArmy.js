@@ -21,7 +21,20 @@
  * @return {function[]}
  */
 function makeArmy(count) {
-  // write code here
+  const shooters = [];
+  let i = 0;
+
+  while (i < count) {
+    const position = i;
+    const shooter = function() { // функция shooter
+      return position; // должна выводить порядковый номер
+    };
+
+    shooters.push(shooter);
+    i++;
+  }
+
+  return shooters;
 }
 
 module.exports = makeArmy;
