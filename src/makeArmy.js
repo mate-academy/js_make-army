@@ -26,8 +26,8 @@ function makeArmy(count) {
 
   while (i < count) {
     const position = i;
-    const shooter = function() { // функция shooter
-      return position; // должна выводить порядковый номер
+    const shooter = function() {
+      return position;
     };
 
     shooters.push(shooter);
