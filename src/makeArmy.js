@@ -25,9 +25,7 @@ function makeArmy(count) {
   const newArr = [];
 
   const soldier = (x) => {
-    return () => {
-      return x;
-    };
+    return () => x;
   };
 
   while (index <= count) {
