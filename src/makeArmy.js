@@ -21,7 +21,19 @@
  * @return {function[]}
  */
 function makeArmy(count) {
-  // write code here
+  const army = new Array(count);
+  let index = 0;
+
+  while (index < army.length) {
+    const solder = index;
+
+    army[index] = () => {
+      return solder;
+    };
+    index++;
+  }
+
+  return army;
 }
 
 module.exports = makeArmy;
