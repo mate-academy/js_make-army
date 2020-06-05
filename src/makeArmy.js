@@ -20,8 +20,24 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
-  // write code here
-}
+const makeSolger = function(serialNo) {
+  return function() {
+    return serialNo;
+  };
+};
+
+const makeArmy = function(n) {
+  const army = [];
+  let currNo = 0;
+
+  while (currNo < n) {
+    const solger = makeSolger(currNo);
+
+    army[currNo] = solger;
+    currNo++;
+  }
+
+  return army;
+};
 
 module.exports = makeArmy;
