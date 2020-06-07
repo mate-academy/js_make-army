@@ -20,8 +20,26 @@
  *
  * @return {function[]}
  */
+
+const makeUnit = (number) => {
+  return () => {
+    return number;
+  };
+};
+
 function makeArmy(count) {
-  // write code here
+  const army = [];
+
+  let i = 0;
+
+  while (i < count) {
+    const unit = makeUnit(i);
+
+    army[i] = unit;
+    i++;
+  }
+
+  return army;
 }
 
 module.exports = makeArmy;
