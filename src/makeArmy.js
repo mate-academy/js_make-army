@@ -20,8 +20,23 @@
  *
  * @return {function[]}
  */
+
 function makeArmy(count) {
-  // write code here
+  const army = [];
+  let currentNo = 0;
+
+  const makeSoldier = (serialNo) => {
+    return () => serialNo;
+  };
+
+  while (currentNo < count) {
+    const soldier = makeSoldier(currentNo);
+
+    army[currentNo] = soldier;
+    currentNo++;
+  }
+
+  return army;
 }
 
 module.exports = makeArmy;
