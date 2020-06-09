@@ -24,13 +24,10 @@ function makeArmy(count) {
   // write code here
   const army = [];
   let order = 0;
+  const makeSoldiers = num => () => num;
 
-  while (army.length < count) {
-    const num = order;
-
-    army.push(function() {
-      return num;
-    });
+  while (order < count) {
+    army.push(makeSoldiers(order));
     order++;
   }
 
