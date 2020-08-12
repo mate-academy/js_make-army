@@ -20,8 +20,19 @@
  *
  * @return {function[]}
  */
+
 function makeArmy(count) {
-  // write code here
-}
+  const army = [];
+  let i = 0;
+
+  while (i < count) {
+    const cache = i;
+
+    army[i] = () => cache;
+    i++;
+  }
+
+  return army;
+};
 
 module.exports = makeArmy;
