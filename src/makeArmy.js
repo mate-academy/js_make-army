@@ -20,8 +20,27 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
-  // write code here
-}
+function makeArmy(length) {
+  let index = 0;
+  const shouters = [];
+
+  while (index < length) {
+    shouters.push(function itself() {
+      let localIndex = 0;
+
+      while (localIndex < shouters.length) {
+        if (shouters[localIndex] === itself) {
+          return localIndex;
+        }
+
+        localIndex++;
+      }
+    });
+
+    index++;
+  };
+
+  return shouters;
+};
 
 module.exports = makeArmy;
