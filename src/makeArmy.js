@@ -21,26 +21,15 @@
  * @return {function[]}
  */
 function makeArmy(length) {
-  let index = 0;
   const shouters = [];
 
-  while (index < length) {
-    shouters.push(function itself() {
-      let localIndex = 0;
+  while (shouters.length < length) {
+    const index = shouters.length;
 
-      while (localIndex < shouters.length) {
-        if (shouters[localIndex] === itself) {
-          return localIndex;
-        }
-
-        localIndex++;
-      }
-    });
-
-    index++;
-  };
+    shouters.push(() => index);
+  }
 
   return shouters;
-};
+}
 
 module.exports = makeArmy;
