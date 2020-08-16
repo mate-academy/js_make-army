@@ -20,8 +20,16 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
-  // write code here
+function makeArmy(length) {
+  const shouters = [];
+
+  while (shouters.length < length) {
+    const index = shouters.length;
+
+    shouters.push(() => index);
+  }
+
+  return shouters;
 }
 
 module.exports = makeArmy;
