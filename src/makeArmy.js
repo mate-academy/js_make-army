@@ -24,7 +24,7 @@ function makeArmy(count) {
   const army = [];
   let index = 0;
 
-  while (index <= count) {
+  while (index < count) {
     const number = index;
 
     army.push(() => number);
