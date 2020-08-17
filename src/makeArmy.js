@@ -36,9 +36,3 @@ function makeArmy(count) {
 }
 
 module.exports = makeArmy;
-
-// const shooters = makeArmy(10);
-
-// shooters[0]();
-// shooters[5]();
-// shooters[9]();
