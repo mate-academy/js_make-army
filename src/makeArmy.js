@@ -22,11 +22,15 @@
  */
 function makeArmy(count) {
   const arr = new Array(count);
+  let i = 0;
 
-  for (let i = 0; i < arr.length; i++) {
+  while (i < count) {
+    const num = i;
+
     arr[i] = function() {
-      return i;
+      return num;
     };
+    i++;
   }
 
   return arr;
