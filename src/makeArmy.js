@@ -21,18 +21,14 @@
  * @return {function[]}
  */
 function makeArmy(count) {
-  let counter = count;
-
   const arrayOfFuncs = [];
 
-  while (counter > 0) {
-    const position = counter;
+  while (arrayOfFuncs.length < count) {
+    const position = arrayOfFuncs.length;
 
-    const showPosition = () => count - position;
+    const showPosition = () => position;
 
     arrayOfFuncs.push(showPosition);
-
-    counter--;
   }
 
   return arrayOfFuncs;
