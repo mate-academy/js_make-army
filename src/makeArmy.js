@@ -23,7 +23,9 @@
 function makeArmy(count) {
   const army = [];
 
-  for (let i = 0; i < count; i++) {
+  while (army.length < count) {
+    const i = army.length;
+
     army.push(() => i);
   }
 
