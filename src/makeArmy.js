@@ -20,8 +20,23 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
+
+const makeArmy = function(count) {
   // write code here
-}
+  const shooters = [];
+  let currentShooter = 0;
+  const buffer = (personNum) => {
+    return () => {
+      return personNum;
+    };
+  };
+
+  while (currentShooter < count) {
+    const shooter = buffer(currentShooter);
+    shooters.push(shooter);
+    currentShooter++;
+  };
+  return shooters;
+};
 
 module.exports = makeArmy;
