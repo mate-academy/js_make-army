@@ -20,8 +20,17 @@
  *
  * @return {function[]}
  */
-function makeArmy(count) {
-  // write code here
-}
+
+const makeArmy = count => {
+  const array = [];
+  let i = 0;
+  while (i < count) {
+    const index = i;
+    array[array.length] = () => index;
+    i++;
+  }
+
+  return array;
+};
 
 module.exports = makeArmy;
